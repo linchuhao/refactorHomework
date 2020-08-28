@@ -1,17 +1,19 @@
 function printOwing (invoice) {
-  let Owing = '***********************\n**** Customer Owes ****\n***********************\n'
-  const outstanding = caculateOutStanding(invoice);
-  recordDueDate(invoice);
-
-  // print details
-  Owing += ` name:${invoice.customer}\n`
-  Owing += ` amount:${outstanding}\n`
-  Owing += ` amount:${invoice.dueDate.toLocaleDateString()}`
-  return Owing
+  return getOwing(invoice)
 }
 
 module.exports = {
   printOwing,
+}
+
+function getOwing(invoice) {
+  const outstanding = caculateOutStanding(invoice);
+  recordDueDate(invoice);
+  let Owing = '***********************\n**** Customer Owes ****\n***********************\n';
+  Owing += ` name:${invoice.customer}\n`;
+  Owing += ` amount:${outstanding}\n`;
+  Owing += ` amount:${invoice.dueDate.toLocaleDateString()}`;
+  return Owing;
 }
 
 function caculateOutStanding(invoice) {
