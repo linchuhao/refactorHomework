@@ -56,6 +56,12 @@ function voyageProfitFactor (voyage, history) {
 function caculateVoyageProfitFactor(voyage, history) {
   let result = 2;
   result = caculateVoyageProfitFactorByZone(voyage);
+  result = caculateVoyageProfitFactorByZoneIsChinaAndIfHasChina(voyage, history);
+  return result;
+}
+
+function caculateVoyageProfitFactorByZoneIsChinaAndIfHasChina(voyage, history) {
+  let result = 0
   if (voyage.zone === 'china' && hasChina(history)) {
     result += 3;
     if (history.length > 10) {
