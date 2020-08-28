@@ -55,12 +55,7 @@ function voyageProfitFactor (voyage, history) {
 
 function caculateVoyageProfitFactor(voyage, history) {
   let result = 2;
-  if (voyage.zone === 'china') {
-    result += 1;
-  }
-  if (voyage.zone === 'east-indies') {
-    result += 1;
-  }
+  result = caculateVoyageProfitFactorByZone(voyage);
   if (voyage.zone === 'china' && hasChina(history)) {
     result += 3;
     if (history.length > 10) {
@@ -80,6 +75,17 @@ function caculateVoyageProfitFactor(voyage, history) {
     if (voyage.length > 14) {
       result -= 1;
     }
+  }
+  return result;
+}
+
+function caculateVoyageProfitFactorByZone(voyage) {
+  let result = 0
+  if (voyage.zone === 'china') {
+    result += 1;
+  }
+  if (voyage.zone === 'east-indies') {
+    result += 1;
   }
   return result;
 }
