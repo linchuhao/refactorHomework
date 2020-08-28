@@ -74,8 +74,7 @@ function rating (voyage, history) {
   }
 }
 
-module.exports = {
-};
+module.exports = rating;
 
 const voyage = {
   zone: 'west-indies',

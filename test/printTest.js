@@ -12,5 +12,5 @@ test('print case1.', t=> {
         ]
       };
     const result = printOwing(invoice);
-    t.is(result,`***********************\n**** Customer Owes ****\n***********************\n name:BigCo\n amount:26\n amount:9/27/2020`);
+    t.is(result,`***********************\n**** Customer Owes ****\n***********************\n name:BigCo\n amount:26\n amount:2020-9-27`);
 });
