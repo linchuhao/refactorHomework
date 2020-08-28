@@ -49,6 +49,11 @@ function caculateCaptainHistoryRisk(history, voyage) {
 }
 
 function voyageProfitFactor (voyage, history) {
+  let result = caculateVoyageProfitFactor(voyage, history);
+  return result;
+}
+
+function caculateVoyageProfitFactor(voyage, history) {
   let result = 2;
   if (voyage.zone === 'china') {
     result += 1;
